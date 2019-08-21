@@ -1,0 +1,89 @@
+﻿@model IEnumerable<IdentifyProject.Models.SightedDB>
+
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = null;
+}
+
+<table class="table table-striped table-condensed" id="SightedTable">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CitizenName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CitizenContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FIRNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CitizenName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CitizenContact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIRNO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AddOrEdit", "Sighted", new { id=@item.SID})')"><i class="fa fa-pencil fa-lg"></i></a>
+                    <a class="btn btn-danger btn-sm" onclick="Delete('@Url.Action("Delete", "Sighted", new { id=@item.SID})')"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

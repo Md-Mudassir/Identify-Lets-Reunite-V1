@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdentifyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MissingDB">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CitizenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizenContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FIRNO" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SightedDB">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CitizenContact" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="FIRNO" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MissingDBs" EntityType="Self.MissingDB" />
+    <EntitySet Name="SightedDBs" EntityType="Self.SightedDB" />
+  </EntityContainer>
+</Schema>

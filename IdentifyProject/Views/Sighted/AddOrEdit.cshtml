@@ -1,0 +1,128 @@
+﻿@model IdentifyProject.Models.SightedDB
+
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("AddOrEdit", "Sighted", FormMethod.Post, new { enctype = "multipart/form-data", onSubmit = "return jQueryAjaxPost(this);", data_restUrl = Url.Action("AddOrEdit", "Sighted", new { id = 0 }) }))//data-resetUrl
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-horizontal">
+            
+            <hr />
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.SID)
+            @Html.HiddenFor(model => model.ImagePath)
+
+            <div class="col-md-6">
+                <div>
+                    <p><i>PD: Physical Disability, MI: Mentally Ill</i></p>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name of person", required="required"} })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", @placeholder = "approx age" , required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "date of sight" , required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CitizenName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CitizenName, new { htmlAttributes = new { @class = "form-control" , @placeholder = "citizen name", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.CitizenName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CitizenContact, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CitizenContact, new { htmlAttributes = new { @class = "form-control", @placeholder = "contact", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.CitizenContact, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "how/where the person was sighted , PD/MI?" , required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "sighted city?", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FIRNO, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FIRNO, new { htmlAttributes = new { @class = "form-control", @placeholder = "type NIL if not filed" } })
+                        @Html.ValidationMessageFor(model => model.FIRNO, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", @placeholder = "type NIL" } })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                        @if (Model.SID != 0)
+                        {
+                            <a class="btn btn-success" onclick="refreshAddNewTab('@Url.Action("AddOrEdit","Sighted",new{id=0})',false)"><i class="fa fa-plus"></i> Add New</a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <img src="@Url.Content(Model.ImagePath)" style="margin:10px" height="200" width="200" id="imagePreview" />
+                        <input type="file" name="ImageUpload" accept="image/jpeg, image/png" onchange="ShowImagePreview(this,document.getElementById('imagePreview'))" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        }
+

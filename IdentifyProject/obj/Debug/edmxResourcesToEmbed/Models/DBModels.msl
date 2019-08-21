@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentifyDBModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="MissingDBs">
+      <EntityTypeMapping TypeName="IdentifyDBModel.MissingDB">
+        <MappingFragment StoreEntitySet="MissingDB">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+          <ScalarProperty Name="CitizenContact" ColumnName="CitizenContact" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FIRNO" ColumnName="FIRNO" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SightedDBs">
+      <EntityTypeMapping TypeName="IdentifyDBModel.SightedDB">
+        <MappingFragment StoreEntitySet="SightedDB">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+          <ScalarProperty Name="CitizenContact" ColumnName="CitizenContact" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="FIRNO" ColumnName="FIRNO" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

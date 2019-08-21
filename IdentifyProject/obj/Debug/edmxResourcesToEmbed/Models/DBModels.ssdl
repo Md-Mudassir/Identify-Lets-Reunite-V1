@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdentifyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MissingDB">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" />
+    <Property Name="CitizenName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIRNO" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="nchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SightedDB">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="nchar" MaxLength="10" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CitizenContact" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nchar" MaxLength="20" />
+    <Property Name="City" Type="nchar" MaxLength="20" />
+    <Property Name="FIRNO" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="nchar" MaxLength="20" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="IdentifyDBModelStoreContainer">
+    <EntitySet Name="MissingDB" EntityType="Self.MissingDB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SightedDB" EntityType="Self.SightedDB" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
