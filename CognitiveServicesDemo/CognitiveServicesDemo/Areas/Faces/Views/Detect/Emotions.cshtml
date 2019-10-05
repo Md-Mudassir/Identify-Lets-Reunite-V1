@@ -1,0 +1,54 @@
+﻿@model IdentifyFacesModel
+@{
+    ViewBag.Title = "Emotions";
+    var groups = (PersonGroup[])ViewBag.PersonGroups;
+}
+
+<h2>Emotions</h2>
+
+@if (Model.Error != null)
+{
+    <strong>@Model.Error</strong>
+}
+
+@Html.Partial("_UploadWithPersonGroups", Model.PersonGroups)
+
+@if (Model.ImageDump != null)
+{
+    <br /><img src="@Model.ImageDump" width="600" style="border: 1px solid darkgray" />
+
+            <h3>Faces</h3>
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Person</th>
+                        <th>Anger</th>
+                        <th>Contempt</th>
+                        <th>Disgust</th>
+                        <th>Fear</th>
+                        <th>Happiness</th>
+                        <th>Neutral</th>
+                        <th>Sadness</th>
+                        <th>Surprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var face in Model.IdentifiedFaces)
+                    {
+                        <tr>
+                            <td><div style="display:inline-block; width:10px; height:10px; background-color: @face.GetHtmlColor()"></div></td>
+                            <td style="text-align:right">@string.Join(", ", face.PersonCandidates.Select(p => p.Value).ToArray())</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Anger</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Contempt</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Disgust</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Fear</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Happiness</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Neutral</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Sadness</td>
+                            <td style="text-align:right">@face.Face.FaceAttributes.Emotion.Surprise</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+}

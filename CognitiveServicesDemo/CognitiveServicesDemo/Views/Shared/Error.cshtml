@@ -1,0 +1,14 @@
+﻿@model ErrorModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Error @(Model?.Code)</h1>
+        <p>@(Model?.Message)</p>
+    </hgroup>
+</body>
+</html>
