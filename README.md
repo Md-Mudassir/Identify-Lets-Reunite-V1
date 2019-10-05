@@ -30,6 +30,6 @@ According to CRY, Maharashtra and Delhi have the maximum number of untraced chil
 
 The Identify website is an enabling platform, where any citizen of India can register and report the following
 
-• Missing children, as well as sightings of their whereabouts without wasting much time.
-• The ‘Sighted’ children can also be reported on this web portal.
-• The reporting can be done through text, photographs, other means of transmitting and uploading information to the Identify site.
+1. Missing children, as well as sightings of their whereabouts without wasting much time.
+2. The ‘Sighted’ children can also be reported on this web portal.
+3. The reporting can be done through text, photographs, other means of transmitting and uploading information to the Identify site.
