@@ -2,6 +2,11 @@
 
 Identify can be used by both parents to report missing children and by citizens to report about any vulnerable child on the streets with details and pictures & it can also be used by police officials. The site will connect to databases and use facial recognition find a probable match, allowing him/her to see the whereabouts of the child.
 
+![layout](https://github.com/Md-Mudassir/Identify-Lets-Reunite/blob/master/samples/identify.JPG)
+
+## Walkthrough Demo (Youtube)
+
+[Watch The Demo](https://bit.ly/33RrrC6)
 
 ## Reasons for development of Identify
 According to CRY, Maharashtra and Delhi have the maximum number of untraced children. According to a recent RTI reply from the Delhi Police, 22 children go missing in Delhi every day.
@@ -22,10 +27,6 @@ According to CRY, Maharashtra and Delhi have the maximum number of untraced chil
 6. Testing(Visual Studio 2015)
 
 ## Features of Identify.
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
 
 The Identify website is an enabling platform, where any citizen of India can register and report the following
 
