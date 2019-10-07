@@ -21,7 +21,7 @@ According to CRY, Maharashtra and Delhi have the maximum number of untraced chil
 
 1. Visual Studio 2015
 2. Database design(MS SQL Server 2017)
-3. Web page design(Bootstrap 4)
+3. Web Design(Bootstrap 4)
 4. Facial Recognition(AZURE- Face API)
 5. Coding(C# ASP.net MVC)
 6. Testing(Visual Studio 2015)
