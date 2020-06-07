@@ -4,6 +4,8 @@ Identify can be used by both parents to report missing children and by citizens 
 
 ![layout](https://github.com/Md-Mudassir/Identify-Lets-Reunite/blob/master/samples/identify.JPG)
 
+Cognative Services Demo Credits: https://github.com/gpeipman/CognitiveServicesDemo
+
 ## Walkthrough Demo (Youtube)
 
 [Watch The Demo](https://bit.ly/33RrrC6)
